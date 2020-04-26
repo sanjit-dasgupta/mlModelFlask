@@ -1,1 +1,1 @@
-web: gunicorn mlhub:app
+web: gunicorn mlModelFlask:app
