@@ -1,0 +1,45 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+    {% if title %}{{ title }} - MLHub{% else %}Welcome to MLHub{% endif %}
+{% endblock %}
+{% block styles %}
+{{super()}}
+<style>
+body { padding-top: 70px; }
+body { padding-bottom: 70px; }
+</style>
+{% endblock %}
+{% block navbar %}
+    <nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid"> 
+			<div class="navbar-header">
+				<button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false"> 
+				<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+				<a href="#" class="navbar-brand">MLHub</a> </div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+				<ul class="nav navbar-nav"> 
+				<li><a href="{{ url_for('index')}}">Home</a></li>
+				<li><a href="{{ url_for('malariaDetection') }}">Malaria Detection</a></li> 
+				<li><a href="{{ url_for('brainTumorDetection') }}">Brain Tumor Detection</a></li> 
+				<li><a href="{{ url_for('diabetesDetection') }}">Diabetes Detection</a></li> 
+				<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download Training Data<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{url_for('static', filename='malariaDetection.zip')}}">Malaria Detection</a></li>
+            <li><a href="{{url_for('static', filename='brainTumor.zip')}}">Brain Tumor Detection</a></li>
+            <li><a href="{{url_for('static', filename='diabetes.csv')}}">Diabetes Detection</a></li>
+          </ul>
+        </li>
+		<li><a href="{{ url_for('history') }}">View Request History</a></li> 
+				</ul>
+			</div>
+		</div>
+	</nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}

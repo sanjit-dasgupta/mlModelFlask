@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block app_content %}
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{url_for('static', filename='img/malaria-cover-image.jpg')}}" alt="Malaria Detection Image" style="height: 200px;">
+      <div class="caption">
+        <h3>Malaria Detection</h3>
+        <p>Model Accuracy : 90.01 %</p>
+        <p><a href="{{ url_for('malariaDetection') }}" class="btn btn-primary" role="button">Go <span class="glyphicon glyphicon-menu-right" aria-hidden="true"> </a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{url_for('static', filename='img/brain-tumor-detection.jpg')}}" alt="Brain Tumor Detection Image" style="height: 200px;">
+      <div class="caption">
+        <h3>Brain Tumor Detection</h3>
+        <p>Model Accuracy : 97.50 %</p>
+        <p><a href="{{ url_for('brainTumorDetection') }}" class="btn btn-primary" role="button">Go <span class="glyphicon glyphicon-menu-right" aria-hidden="true"> </a></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{url_for('static', filename='img/diabetes-cover-image2.png')}}" alt="Diabetes Detection Image" style="height: 200px;">
+      <div class="caption">
+        <h3>Diabetes Detection</h3>
+        <p>Model Accuracy : 77.00 %</p>
+        <p><a href="{{ url_for('diabetesDetection') }}" class="btn btn-primary" role="button">Go <span class="glyphicon glyphicon-menu-right" aria-hidden="true"> </a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

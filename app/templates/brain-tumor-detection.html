@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+{% if result %}
+<div class="alert alert-success" role="alert">
+  <p>Result - {{ result }}</p>
+</div>
+{% endif%}
+{% if image %}
+<div class="row">
+<div class="col-md-3 col-sm-0"></div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="data:image/png;base64, {{ original }}" alt="Original Image">
+      <div class="caption">
+        <h3>Original Image</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-3">
+    <div class="thumbnail">
+      <img src="data:image/png;base64, {{ image }}" alt="Processed Image">
+      <div class="caption">
+        <h3>Processed Image</h3>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-0"></div>
+</div>
+<br/>
+{% endif%}
+<div class="panel panel-primary">
+  <div class="panel-heading text-center">
+  <h2 class="panel-title">Brain Tumor Detection Form</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+	<div class="col-md-4 col-sm-0"></div>
+        <div class="col-md-4">
+            {{ wtf.quick_form(form, button_map={'submit':'success'}) }}
+        </div>
+	<div class="col-md-4 col-sm-0"></div>
+	</div>
+  </div>
+</div>
+{% endblock %}

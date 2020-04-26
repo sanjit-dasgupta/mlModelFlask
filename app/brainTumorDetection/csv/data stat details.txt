@@ -1,0 +1,1 @@
+skewness: very high, Normalization brought down the skewness

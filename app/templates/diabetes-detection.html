@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+{% if result %}
+<div class="alert alert-success" role="alert">
+  <p>{{ result }}</p>
+</div>
+{% endif%}
+<div class="panel panel-primary">
+  <div class="panel-heading text-center">
+  <h2 class="panel-title">Diabetes Detection Form</h2>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+	<div class="col-md-4 col-sm-0"></div>
+        <div class="col-md-4">
+            {{ wtf.quick_form(form, button_map={'submit':'success'}) }}
+        </div>
+	<div class="col-md-4 col-sm-0"></div>
+	</div>
+  </div>
+</div>
+{% endblock %}
