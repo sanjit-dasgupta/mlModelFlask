@@ -1,1 +1,1 @@
-web: gunicorn mlModelFlask:app
+web: gunicorn app:app
