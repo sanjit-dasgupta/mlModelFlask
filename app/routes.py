@@ -57,3 +57,7 @@ def brainTumorDetection():
 @app.route('/view-history')
 def history():
     return render_template('view-history.html', title="View History", history=History.query.order_by(History.id.desc()).all())
+
+@app.route('/credits')
+def credits():
+    return render_template('credits.html', title="Credits")
